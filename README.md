@@ -111,6 +111,8 @@ def index():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 ```    
+[Construcción de contenedor](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-Docker-Final/blob/main/images/Construccion%20Flask%201.png)
+[Flask levantado](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-Docker-Final/blob/main/images/Flask%20levantado.png)
 
 * 2.3 Añadimos ```flask``` al archivo requirements.txt
 
@@ -202,3 +204,4 @@ INSERT INTO piezas (nombre, descripcion, precio) VALUES
 **Importante** cada modificaón que se haga en los archivos y para que se vean reflejados en la aplicaón, es necesario que se pare y vuelvan a construir.
 
 * 3.4 Una vez construidos, probaremos la aplicación accediendo a ella desde nuestro navegador con **localhost:5000** y deberíamos ver algo como esto:
+[Aplicacion terminada y funcionando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-Docker-Final/blob/main/images/Aplicaion%20funcionando%20correctamente.png)

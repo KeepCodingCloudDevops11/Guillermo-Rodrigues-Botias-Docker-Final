@@ -30,6 +30,8 @@ Práctica final módulo Docker Guillermo Rodrigues Botias
      docker-compose.yml   # Archivo de configuración de Docker Compose
      Dockerfile           # Archivo para construir la imagen Docker
      init.sql             # Archivo base de datos
+     .gitignore           # No tener problemas de subida de archivos que no queremos
+     .env                 # Variables de entorno
      README.md            # Archivo de instrucciones
 ```
 
@@ -41,8 +43,8 @@ import os
 
 app = Flask(__name__)
 
-# Ruta donde se almacenará el contador
-COUNTER_FILE = "counter.txt"
+# Ruta del contador desde la variable de entorno
+COUNTER_FILE = os.getenv("COUNTER_FILE", "counter.txt")  # Valor por defecto
 
 def get_counter():
     if not os.path.exists(COUNTER_FILE) or os.path.getsize(COUNTER_FILE) == 0:
@@ -151,6 +153,8 @@ services:
       context: .
     ports:
       - "5000:5000"
+    environment:
+      - COUNTER_FILE=${APP_COUNTER_FILE}  # Pasar la variable a la app
     volumes:
       - ./app/counter.txt:/app/counter.txt
     restart: always
@@ -159,10 +163,10 @@ services:
     image: mysql:8.0
     container_name: recambios_db
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: recambios
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
@@ -171,6 +175,7 @@ services:
 
 volumes:
   db_data:
+
 
 ```
 
@@ -206,3 +211,5 @@ INSERT INTO piezas (nombre, descripcion, precio) VALUES
 
 * 3.4 Una vez construidos, probaremos la aplicación accediendo a ella desde nuestro navegador con **localhost:5000** y deberíamos ver algo como esto:
 [Aplicacion terminada y funcionando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-Docker-Final/blob/main/images/Aplicaion%20funcionando.png)
+
+

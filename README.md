@@ -12,17 +12,18 @@ Práctica final módulo Docker Guillermo Rodrigues Botias
  En esta práctica vamos a levantar dos contenedores de docker comunicados entre si, uno será flask y el otro mysql, tendremos un contador  persistente para que aunque paremos el contenedor, al volverlo a iniciar nos cuente desde donde lo paramos.
 
  Para conseguirlo necesitaremos:
- *Docker, Docker desktop
- *Docker compose para que lo levante y gestione automaticamente
- *Flask
+ * Docker, Docker desktop
+ * Docker compose para que lo levante y gestione automaticamente
+ * Flask
 
  ## Segunda Parte
 
  En primer lugar, vamos a crear un repositorio en nuestro terminal, desde ahí comencaremos a trabajar, desde la raíz. Tendremos que crear archivos y carpteas con esta **estructura**, este es un ejemplo:
 
 * 2.1 Estructura
+```plaintext
  Guillermo-Rodrigues-Botias-Docker-Final/
-     app/
+    app/
          app.py           # Archivo principal de la aplicación
          requirements.txt # Dependencias de Python
          counter.txt      # Archivo de conteo
@@ -30,6 +31,7 @@ Práctica final módulo Docker Guillermo Rodrigues Botias
      Dockerfile           # Archivo para construir la imagen Docker
      init.sql             # Archivo base de datos
      README.md            # Archivo de instrucciones
+```
 
 -En el archivo **app.py** añadimos el siguiente código
 

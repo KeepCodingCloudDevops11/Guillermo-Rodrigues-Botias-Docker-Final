@@ -6,6 +6,8 @@ services:
       context: .
     ports:
       - "5000:5000"
+    environment:
+      - COUNTER_FILE=${APP_COUNTER_FILE}  # Pasar la variable a la app
     volumes:
       - ./app/counter.txt:/app/counter.txt
     restart: always
@@ -14,10 +16,10 @@ services:
     image: mysql:8.0
     container_name: recambios_db
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: recambios
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:

@@ -3,8 +3,9 @@ import os
 
 app = Flask(__name__)
 
-# Ruta donde se almacenará el contador
-COUNTER_FILE = "counter.txt"
+# Ruta del contador desde la variable de entorno
+COUNTER_FILE = os.getenv("COUNTER_FILE", "counter.txt")  # Valor por defecto
+
 
 def get_counter():
     if not os.path.exists(COUNTER_FILE) or os.path.getsize(COUNTER_FILE) == 0:

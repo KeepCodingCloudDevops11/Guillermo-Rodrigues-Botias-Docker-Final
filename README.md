@@ -6,7 +6,6 @@ Práctica final módulo Docker Guillermo Rodrigues Botias
 * [*Primera parte*](#primera-parte) : Objetio y Requisitos
 * [*Segunda parte*](#segunda-parte) : Estrcutura y creación de contenedor Flask
 * [*Tercera parte*](#tercera-parte) : Contenedor Base de Datos
-* [Imagenes]
 
  ## Primera Parte
 
@@ -204,4 +203,4 @@ INSERT INTO piezas (nombre, descripcion, precio) VALUES
 **Importante** cada modificaón que se haga en los archivos y para que se vean reflejados en la aplicaón, es necesario que se pare y vuelvan a construir.
 
 * 3.4 Una vez construidos, probaremos la aplicación accediendo a ella desde nuestro navegador con **localhost:5000** y deberíamos ver algo como esto:
-[Aplicacion terminada y funcionando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-Docker-Final/blob/main/images/Aplicaion%20funcionando%20correctamente.png)
+[Aplicacion terminada y funcionando](https://github.com/KeepCodingCloudDevops11/Guillermo-Rodrigues-Botias-Docker-Final/blob/main/images/Aplicaion%20funcionando.png)
